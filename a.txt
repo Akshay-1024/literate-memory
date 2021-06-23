@@ -1,0 +1,6 @@
+create table users(
+	sno int AUTO_INCREMENT PRIMARY KEY,
+        recipie_name varchar(1000),
+		items varchar(100),
+        recipie_procedue varchar(1000)
+)
