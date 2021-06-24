@@ -1,13 +1,13 @@
 <?php
 require_once "pdo.php";
-    if(isset($_POST['recipie-name'])
-    && isset($_POST['recipie-items'])
-    && isset($_POST['recipie-procedue'])){
-        $stmt = $pdo -> prepare('INSERT into users(recipie_name,items,recipie_procedue) VALUES(:recipie-name,:recipie-items,:recipie-procedue)');
+    if(isset($_POST['name'])
+    &&isset($_POST['item'])
+    && isset($_POST['procedue'])){
+        $stmt = $pdo -> prepare('INSERT into users(recipie_name,items,recipie_procedue) VALUES(:name,:item,:procedue)');
         $stmt ->execute(array(
-            ':recipie-name' => $_POST['recipie-name'],
-            ':recipie-items' => $_POST['recipie-items'],
-            ':recipie-procedue' => $_POST['recipie-procedue']
+            ':name' => $_POST['name'],
+            ':item' => $_POST['item'],
+            ':procedue' => $_POST['procedue']
         ));
 
         header("location: user.php",true,301);
@@ -27,16 +27,16 @@ require_once "pdo.php";
 </head>
 <body>
     <div class = "form-container">
-    <form method="post">
+    <form method="POST">
     
-    <label for = "recipie-name">Recipie-Name:
-    <input type = "text" id = "recipie-name" value = "">
+    <label for = "name">Recipie-Name:
+    <input type = "text" id = "recipie-name" name = "name">
     <br>
-    <label for = "recipie-items">Recipie-Items:
-    <input type = "text" id = "recipie-items" value = "">
+    <label for = "item">Recipie-Items:
+    <input type = "text" id = "recipie-items" name = "item">
     <br>
-    <label for = "recipie-procedue">Procedure:
-    <textarea type = "text" id = "recipie-procedue" value = ""></textarea>
+    <label for = "procedue">Procedure:
+    <textarea type = "text" id = "recipie-procedue" name = "procedue"></textarea>
     
     
     <button type = "submit">submit</button>
