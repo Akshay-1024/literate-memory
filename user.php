@@ -13,7 +13,7 @@ require_once "pdo.php";
         header("location: user.php",true,301);
         return;
     }
-
+    $us = 'abc'
 
 
 
@@ -23,9 +23,10 @@ require_once "pdo.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HI User</title>
+    <title>HI USER</title>
 </head>
 <body>
+    <h1>HI <?php echo $us?></h1>
     <div class = "form-container">
     <form method="POST">
     
